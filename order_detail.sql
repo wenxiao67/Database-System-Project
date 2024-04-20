@@ -1,16 +1,12 @@
 -- This is to show order_details
--- Within a specific order, we can display all the item details
--- param (order_id,)
-
 use `proj`;
-
-SELECT `order`.`order_id`, `item`.`item_name`,`order_item`.`item_id`,`order`.`store_id`,
-    `order_item`.`quantity`,`order`.`customer_id`,
-    `order`.`order_time`,`order`.`order_status`,
-    `item`.`item_price`,`item`.`item_type`,`item`.`item_inventory`
-FROM `order_item`
-LEFT JOIN `order`
-ON `order_item`.`order_id` = `order`.`order_id`
-RIGHT JOIN `item`
-ON `order_item`.`item_id` = `item`.`item_id`
-WHERE `order`.`order_id` = %s
+SELECT `order`.`customer_id` ,`order`.ORDER_ID,`order`.`ORDER_TIME`,
+    `order`.RESTAURANT_ID, `order`.`TABLE_ID`,`food`.FOOD_ID,`food`.FOOD_TYPE,
+    `food`.FOOD_NAME,`food`.PRICE,`order_details`.QUANTITY,`food`.`VISIBLE`,
+    `food`.`INVENTORY`
+FROM `order_details` 
+LEFT JOIN `order` 
+ON `order_details`.ORDER_ID = `order`.ORDER_ID 
+LEFT JOIN `food`
+ON `order_details`.FOOD_ID = `food`.FOOD_ID
+where `order`.CUSTOMER_ID=1;
