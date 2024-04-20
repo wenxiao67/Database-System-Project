@@ -19,4 +19,11 @@ backend: (by lycoris & vivian)
 		login verification
 		***buy items*** (if time allow)
 
-really data: not yet
+llm prompt:
+	use prompt to let llm to generate queries
+
+really data collection: (by minqi)
+	Family Mart, Seven Eleven, Tianmao Mart
+
+analysis:
+	analysis the property of data (can use SQL)
