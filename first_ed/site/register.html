@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGU E-Store - Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- <div class="logo"><img src="image/logo.png"></div> -->
+            <div class="header-buttons">
+                <button onclick="location.href='home.html'">Home</button>
+                <button onclick="location.href='login.html'">Login</button>
+                <button onclick="location.href='register.html'" class="active">Register</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <form action="register-process.php" method="post">
+            <h1>Sign up. Start shopping easily</h1>
+            <input type="text" name="username" placeholder="Enter your Username" required>
+            <input type="password" name="password" placeholder="Enter your Password" required>
+            <br><button type="submit">Register</button>
+        </form>
+    </main>
+</body>
+</html>

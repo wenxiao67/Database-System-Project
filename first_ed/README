@@ -1,0 +1,22 @@
+This is our first edition 4.20
+
+design:
+	E-R Diagram
+
+frontend: (by hwx)
+	Home & login & registry
+	TODO: 
+		***choose botton for gender&birth*** (if time allowd)
+
+backend: (by lycoris & vivian)
+	Data: create the schema and toy data
+	Query: 
+		E-store: use python to deal with SQL queries
+		SQL files: diferent queries and update
+	TODO: 
+		format of the queried data
+		connect the frontend and backend
+		login verification
+		***buy items*** (if time allow)
+
+really data: not yet
