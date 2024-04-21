@@ -21,8 +21,8 @@ VALUES (@new_record_id, @first_name, @last_name, @login_name, @login_password, @
 
 
 -- Insert into customer
-INSERT INTO customer (customer_id, record_id, customer_name, customer_gender, customer_birth, customer_phone, customer_password)
-VALUES (@new_record_id, @new_record_id, @login_name, @gender, @birth, @phone, @login_password);
+INSERT INTO customer (customer_id, record_id, validation_state)
+VALUES (@new_record_id, @new_record_id, 1);
 
 -- Commit the transaction
 COMMIT;
