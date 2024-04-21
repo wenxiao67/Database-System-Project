@@ -1,0 +1,29 @@
+This is our first edition 4.20
+
+design:
+	E-R Diagram
+
+frontend: (by hwx)
+	Home & login & registry
+	TODO: 
+		***choose botton for gender&birth*** (if time allowd)
+
+backend: (by lycoris & vivian)
+	Data: create the schema and toy data
+	Query: 
+		E-store: use python to deal with SQL queries
+		SQL files: diferent queries and update
+	TODO: 
+		format of the queried data
+		connect the frontend and backend
+		login verification
+		***buy items*** (if time allow)
+
+llm prompt:
+	use prompt to let llm to generate queries
+
+really data collection: (by minqi)
+	Family Mart, Seven Eleven, Tianmao Mart
+
+analysis:
+	analysis the property of data (can use SQL)

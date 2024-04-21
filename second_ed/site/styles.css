@@ -1,0 +1,127 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #8A2BE2;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: start; /* Align to the start to keep the logo on the left */
+    align-items: center;
+}
+
+nav .header-buttons button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: large;
+}
+
+main {
+    padding: 20px;
+}
+
+main h1, main h2 {
+    text-align: center;
+}
+
+form {
+    max-width: 300px;
+    margin: 20px auto;
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+form input[type=text],
+form input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form input[type=checkbox] {
+    margin-right: 10px;
+}
+
+form button {
+    background-color: #8A2BE2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+nav .header-buttons button:hover {
+    background-color: #a280e3; /* A lighter purple for hover */
+}
+
+nav .header-buttons button.active {
+    font-weight: 900;
+}
+
+.logo img {
+    width: 3vw; /* logo width will be 10% of the viewport width */
+    height: auto;
+    float: right;
+}
+
+.store-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* This will vertically center the items */
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px; /* Adjust the max-width as per your design requirement */
+  }
+  
+  .store {
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stacks image and text on top of each other */
+    align-items: center; /* Centers the items horizontally */
+    flex: 0 1 calc(33.33% - 40px);
+    margin: 10px; /* Adjust the margin as needed */
+  }
+  
+  .store img {
+    width: 100%; /* Makes image responsive within the container */
+    max-width: 300px; /* Adjust the maximum width as needed */
+    height: auto; /* Maintains aspect ratio */
+    margin-bottom: 8px;
+  }
+  
+  .store-text {
+    text-align: center;
+    display: block; /* This ensures that text is below the image */
+  }
+
+  .store-name, .store p {
+    color: black; /* Sets text color to black */
+  }
+  
+  .store-name {
+    font-size: 1.2em; /* Adjust font size as needed */
+    font-weight: bold; /* Adjust font weight as needed */
+    margin-bottom: 4px;
+  }
+  
+  .store p {
+    font-size: 1em; /* Adjust the paragraph font size as needed */
+  }
+  
+  .store a, .store a:visited, .store a:hover, .store a:active {
+    text-decoration: none; /* This removes the underline */
+    color: black; /* This sets the text color to black */
+  }
+  
