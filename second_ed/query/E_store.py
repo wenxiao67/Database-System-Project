@@ -145,19 +145,19 @@ conn, cursor = connect_to_database(host, port, user, password, database)
 current_directory = os.getcwd()
 
 # # Create table
-# filename = os.path.join(current_directory, 'first_ed/data', 'Create.sql')
+# filename = os.path.join(current_directory, 'second_ed/data', 'Create.sql')
 # run_sql_file(filename, conn)
 
 # # Insert data
 # for table_name in ['sign_up_records','customer', 'store', 'item', 'order', 'order_item']:
-#     filename = os.path.join(current_directory, 'first_ed/data', f'{table_name}.xlsx')
+#     filename = os.path.join(current_directory, 'second_ed/data', f'{table_name}.xlsx')
 #     sql_query = excel_to_sql_query(filename, table_name)
 #     cursor.execute(sql_query)
 
 
 
 # Query item_detail test
-# filename = os.path.join(current_directory, 'first_ed/query', 'item_detail.sql')
+# filename = os.path.join(current_directory, 'second_ed/query', 'item_detail.sql')
 # res = execute_query_from_file(cursor, filename,('Coffee Jelly',))
 # df = pd.DataFrame(res)
 # df.columns = ["item_name", "store_name", "store_id", "store_address", "item_id", "item_price", "item_type", "item_inventory"]
@@ -165,7 +165,7 @@ current_directory = os.getcwd()
 
 # TODO: dataframe rename
 # Query customer_order test
-# filename = os.path.join(current_directory, 'first_ed/query', 'customer_order.sql')
+# filename = os.path.join(current_directory, 'second_ed/query', 'customer_order.sql')
 # res = execute_query_from_file(cursor, filename,(1,))
 # df = pd.DataFrame(res)
 # df.columns = ['customer_id', 'order_id', 'store_name', 'order_time', 'order_status']
@@ -173,7 +173,7 @@ current_directory = os.getcwd()
 
 # TODO: dataframe rename
 # Query order_detail test
-# filename = os.path.join(current_directory, 'first_ed/query', 'order_detail.sql')
+# filename = os.path.join(current_directory, 'second_ed/query', 'order_detail.sql')
 # res = execute_query_from_file(cursor, filename,(1,))
 # df = pd.DataFrame(res)
 # df.columns = ["order_id", "item_name", "item_id", "store_id", "quantity", "customer_id", "order_time", "order_status", "item_price", "item_type", "item_inventory"]
@@ -181,7 +181,7 @@ current_directory = os.getcwd()
 
 # TODO: dataframe rename
 # Query store_detail test
-# filename = os.path.join(current_directory, 'first_ed/query', 'store_detail.sql')
+# filename = os.path.join(current_directory, 'second_ed/query', 'store_detail.sql')
 # res = execute_query_from_file(cursor, filename,(1,))
 # df = pd.DataFrame(res)
 # df.columns = ['item_id', 'item_name','item-price','item_type','item_inventory']
@@ -189,12 +189,12 @@ current_directory = os.getcwd()
 
 # TODO: dataframe rename
 # Registration test
-filename = os.path.join(current_directory, 'first_ed/query', 'registration.sql')
-try:
-    execute_query_from_file(cursor,filename,('xingxing','yang','niyhulu','female','2001-12-29','123445','1234556'))
-    print("Registrate successfually!")
-except mysql.connector.Error as e:
-    print(f"An error occurred: {e}")
+# filename = os.path.join(current_directory, 'second_ed/query', 'registration.sql')
+# try:
+#     execute_query_from_file(cursor,filename,('xingxing','yang','niyhulu','female','2001-12-29','123445','1234556'))
+#     print("Registrate successfually!")
+# except mysql.connector.Error as e:
+#     print(f"An error occurred: {e}")
 
 # Close the connection
 close_connection(conn)
