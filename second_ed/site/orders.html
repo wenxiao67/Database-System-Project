@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="header-buttons">
+                <button onclick="location.href='user.html'">Back to Profile</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>History Orders</h1>
+        <ul class="orders-list">
+            <li class="order-item" tabindex="0"> <!-- Make it focusable -->
+                <span class="order-summary">Order 1</span>
+                <div class="order-details">
+                  <p><strong>Store_id:</strong> 1</p>
+                  <p><strong>Order_time:</strong> 04/15/2024</p>
+                  <p><strong>Order_status:</strong> completed</p>
+                  <!-- Additional details here -->
+                </div>
+                <!-- additional order summary here -->
+            </li>
+              
+            <!-- More orders -->
+        </ul>
+    </main>
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="header-buttons">
+                <button onclick="location.href='home_loggin.html'">Home</button>
+                <!-- User ID button -->
+                <button id="userButton" onclick="location.href='user.html'">UserID:120090020</button>
+            </div>
+        </nav>
+    </header>
+    
+    <main id="store-content">
+    </main>
+
+    <script>
+        // Mock data for the orders
+        const storeItems = {
+            '7-eleven': [
+                {
+                    itemid: '001',
+                },
+                // More orders...
+            ],
+            // Other stores...
+        };
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var storeKey = urlParams.get('store');
+            displayStore(storeKey);
+        });
+    
+        function displayStore(storeKey) {
+            const items = storeItems[storeKey];
+            const storeContent = document.getElementById('store-content');
+    
+            storeContent.innerHTML = `<h1>${storeKey} - Items</h1>`;
+            
+            const itemsList = document.createElement('ul');
+            itemsList.className = 'items-list';
+    
+            items.forEach(item => {
+                const storeItem = document.createElement('li');
+                storeItem.className = 'store-item';
+                storeItem.tabIndex = 0;
+                storeItem.innerHTML = `
+                    <span class="item-summary">Item ${item.itemid}</span>
+                    <div class="item-details">
+                        <!-- add infomation -->
+                    </div>
+                `;
+                itemsList.appendChild(storeItem);
+            });
+
+            storeContent.appendChild(itemsList);
+        }
+    </script>
+    
+</body>
+</html>

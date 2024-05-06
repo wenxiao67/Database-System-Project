@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="header-buttons">
+                <button onclick="location.href='home_loggin.html'">Home</button>
+                <!-- User ID button -->
+                <button id="userButton" onclick="location.href='user.html'">Welcome, Tom!</button>
+            </div>
+        </nav>
+    </header>
+    
+    <main id="search-content" class="store-layout">
+        <!-- Search Section -->
+        <section id="search-section">
+            <form id="searchForm" action="/search-results.php" method="post" style="text-align:center; margin-bottom: 20px;">
+                <input type="text" id="searchInput" name="searchTerm" placeholder="Search for items..." required>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+    </main>
+
+
+    
+    
+
+    <script>
+        const storeItems = [
+            {"item_name":"Coca-Cola","store_name":"711","store_id":1,"store_address":"Upper Campus","item_id":1,"item_price":3.0,"item_type":"Beverage","item_inventory":50},
+            {"item_name":"KitKat","store_name":"711","store_id":1,"store_address":"Upper Campus","item_id":4,"item_price":4.2,"item_type":"Chocolate","item_inventory":35},
+            {"item_name":"Mars Bar","store_name":"711","store_id":1,"store_address":"Upper Campus","item_id":10,"item_price":3.8,"item_type":"Chocolate","item_inventory":40},
+            {"item_name":"Snickers","store_name":"711","store_id":1,"store_address":"Upper Campus","item_id":12,"item_price":4.5,"item_type":"Chocolate","item_inventory":30},
+            {"item_name":"Twix","store_name":"711","store_id":1,"store_address":"Upper Campus","item_id":16,"item_price":4.2,"item_type":"Chocolate","item_inventory":35},
+            {"item_name":"M&M's","store_name":"711","store_id":1,"store_address":"Upper Campus","item_id":25,"item_price":5.5,"item_type":"Chocolate","item_inventory":30},
+            {"item_name":"Coffee Jelly","store_name":"FamilyMart","store_id":2,"store_address":"Lower Campus","item_id":46,"item_price":5.8,"item_type":"Dessert","item_inventory":40},
+            {"item_name":"Iced Coffee","store_name":"FamilyMart","store_id":2,"store_address":"Lower Campus","item_id":51,"item_price":5.0,"item_type":"Beverage","item_inventory":35},
+            {"item_name":"Corn Dog","store_name":"FamilyMart","store_id":2,"store_address":"Lower Campus","item_id":58,"item_price":6.5,"item_type":"Snack","item_inventory":35},
+            {"item_name":"Soy Sauce","store_name":"Tmall Supermarket","store_id":3,"store_address":"Upper Campus","item_id":68,"item_price":6.8,"item_type":"Condiment","item_inventory":70},
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            displayStore();
+        });
+
+        function displayStore() {
+            const storeContent = document.getElementById('search-content');
+
+            storeContent.innerHTML = '<h1>Search Result for "co"</h1>';
+            
+            const itemsList = document.createElement('ul');
+            itemsList.className = 'items-list';
+
+            storeItems.forEach(item => {
+
+                const storeItem = document.createElement('li');
+                storeItem.className = 'store-item';
+                storeItem.tabIndex = 0;
+                storeItem.innerHTML = `
+                    <span class="item-summary">${item.item_name} - $${item.item_price.toFixed(2)}</span>
+                    <div class="item-details">
+                        <div>Store: ${item.store_name}</div>
+                        <div>Address: ${item.store_address}</div>
+                        <div>Type: ${item.item_type}</div>
+                        <div>Inventory: ${item.item_inventory}</div>
+                    </div>
+                `;
+                itemsList.appendChild(storeItem);
+            });
+
+            storeContent.appendChild(itemsList);
+        }
+
+    </script>
+    
+</body>
+</html>

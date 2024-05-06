@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="header-buttons">
+                <button onclick="location.href='user.html'">Back to Profile</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Shopping Cart</h1>
+        <ul class="cart-items">
+            <!-- Items will be added here by JavaScript-->
+            <li>
+                <input type="checkbox" id="item1" name="item" value="20.00" onchange="calculateTotal()">
+                <label for="item1">Product A - Quantity: 2 - Price: $20.00</label>
+            </li>
+            <li>
+                <input type="checkbox" id="item2" name="item" value="45.00" onchange="calculateTotal()">
+                <label for="item2">Product B - Quantity: 1 - Price: $45.00</label>
+            </li>
+            <!-- More items can be dynamically added here -->
+        </ul>
+        <section class = 'cart-items' >
+            <p>Total: $<span id="total">0.00</span></p>
+            <button onclick="location.href='checkout.html'">Proceed to Checkout</button>
+        </section>
+        
+    </main>
+
+    <script>
+        function calculateTotal() {
+            var items = document.querySelectorAll('input[name="item"]:checked');
+            var total = 0;
+            items.forEach((item) => {
+                total += parseFloat(item.value);
+            });
+            document.getElementById('total').textContent = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>

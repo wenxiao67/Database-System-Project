@@ -40,7 +40,19 @@ form {
 }
 
 form input[type=text],
+form input[type = first_name],
+form input[type = last_name],
+form input[type = tel],
+form input[type = date],
 form input[type=password] {
+    width: 92%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form select {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -63,18 +75,13 @@ form button {
 }
 
 nav .header-buttons button:hover {
-    background-color: #a280e3; /* A lighter purple for hover */
+    background-color: #c1a0df; /* A lighter purple for hover */
 }
 
 nav .header-buttons button.active {
     font-weight: 900;
 }
 
-.logo img {
-    width: 3vw; /* logo width will be 10% of the viewport width */
-    height: auto;
-    float: right;
-}
 
 .store-container {
     display: flex;
@@ -125,3 +132,193 @@ nav .header-buttons button.active {
     color: black; /* This sets the text color to black */
   }
   
+
+.user-info, .user-orders {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #8A2BE2;
+    border-radius: 5px;
+}
+
+.user-info h2, .user-orders h2 {
+    color: #333;
+}
+
+.user-info p, .user-orders ul {
+    font-size: 16px;
+}
+
+
+.logout-confirmation {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.logout-confirmation h2 {
+  color: #333;
+}
+
+.logout-confirmation p {
+  font-size: 16px;
+  color: #666;
+}
+
+.icon {
+  height: 30px; 
+  width: auto;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+.header-buttons a {
+  color: white;
+  background-color: #8A2BE2;
+  padding: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: large;
+}
+
+.header-buttons a:hover {
+  background-color: #c1a0df;
+}
+
+.header-buttons button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #8A2BE2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-buttons button:hover {
+  background-color: #c1a0df;
+}
+
+.user-info button {
+  display: block; /* Makes the button block level for better visibility */
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #8A2BE2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-info button:hover {
+  background-color: #c1a0df;
+}
+
+/* for the order and cart */
+.orders-list, .cart-items {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #8A2BE2;
+  border-radius: 5px;
+}
+
+.orders-list li, .cart-items li {
+  list-style-type: none; 
+  margin-bottom: 5px;
+  border-bottom: 1px solid #e1dede;
+  padding: 10px 0; 
+}
+
+.cart-items label {
+  vertical-align: middle; 
+  line-height: 24px;
+}
+
+.cart-items input[type="checkbox"] {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.cart-items button {
+  display: block;
+  width: auto; 
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #8A2BE2; /* Purple background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #c1a0df; /* Lighter purple on hover */
+}
+
+form#cart-form > p {
+  font-size: 16px;
+}
+
+
+/* order */
+.order-item {
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.order-item:hover .order-details,
+.order-item:focus .order-details { 
+  display: block;
+}
+
+.order-details {
+  padding: 10px;
+  background-color: white; 
+  border: 1px solid #8A2BE2; 
+  margin-top: 5px;
+}
+
+.order-summary {
+  display: block;
+  font-weight: bold;
+}
+
+/* for store-item */
+.items-list {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #8A2BE2;
+  border-radius: 5px;
+}
+
+.items-list li {
+  list-style-type: none; 
+  margin-bottom: 5px;
+  border-bottom: 1px solid #e1dede;
+  padding: 10px 0; 
+}
+
+.store-item {
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.store-item:hover .item-details,
+.store-item:focus .item-details { 
+  display: block;
+}
+
+.item-details {
+  padding: 10px;
+  background-color: white; 
+  border: 1px solid #8A2BE2; 
+  margin-top: 5px;
+}
+
+.item-summary {
+  display: block;
+  font-weight: bold;
+}

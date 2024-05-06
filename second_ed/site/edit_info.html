@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="header-buttons">
+                <button onclick="location.href='user.html'">Back to Profile</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <form action="submit_info.php" method="POST" class="form-style">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <br><button type="submit">Save Changes</button>
+        </form>
+    </main>
+</body>
+</html>

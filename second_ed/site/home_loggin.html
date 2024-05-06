@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Items</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="header-buttons">
+                <button onclick="location.href='home_loggin.html'">Home</button>
+                <!-- User ID button -->
+                <button id="userButton" onclick="location.href='user.html'">UserID:120090020</button>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Search Form -->
+        <form action="/search-results.php" method="post">
+            <input type="text" id="searchInput" placeholder="Search for items..." required>
+            <button type='submit'>Search</button>
+        </form>
+
+        <!--搞错了需求，这部分都不需要-->
+        <!-- below the search bar, it will be a list to show the items -->
+        <!--get the infomation about items from item.csv-->
+        <!-- the items are displayed inorder by the item id, and Store_id	Item_name	Item_price (RMB)	Item_type	Item_inventory will be displayed -->
+        <!-- it will also have a function to shopping -->
+
+        <!-- Store links section starts -->
+        <div class="store-container">
+            <div class="store">
+            <a href="store.html?store=7-eleven">
+                <img src="image/7-eleven.png" alt="7-eleven Image" />
+                <div class="store-name">7 ELEVEN</div>
+                <p>Store Sales: 1500</p>
+                <p>Address: Upper Campus</p>
+            </a>
+            </div>
+        
+            <div class="store">
+            <a href="store.html?store=Tmall Supermarket">
+                <img src="image/Tmall.png" alt="Tmall Image" />
+                <div class="store-name">Tmall Supermarket</div>
+                <p>Store Sales: 5000</p>
+                <p>Address: Upper Campus</p>
+            </a>
+            <!-- <p>You may click the image and enter the item page for shopping</p> -->
+            </div>
+        
+            <div class="store">
+            <a href="store.html?store=Family Mart">
+                <img src="image/FM.png" alt="FamilyMart Image" />
+                <div class="store-name">Family Mart</div>
+                <p>Store Sales: 2000</p>
+                <p>Address: Lower Campus</p>
+            </a>
+            </div>
+        </div>
+    </main>
+
+
+
+<!-- don‘t need， sad
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                fetchItems();
+            });
+            
+            function fetchItems() {
+                fetch('/Item.csv')
+                    .then(response => response.text())
+                    .then(csv => {
+                        const items = parseCSV(csv);
+                        displayItems(items);
+                    })
+                    .catch(error => console.error('Error loading CSV file:', error));
+            }
+            
+            function parseCSV(csvData) {
+                // Split the CSV by line then map each line to an object
+                return csvData.trim().split('\n').slice(1).map(line => {
+                    const columns = line.split(''); // Assuming tab-separated values
+                    return {
+                        Item_id: columns[0],
+                        Store_id: columns[1],
+                        Item_name: columns[2],
+                        Item_price: columns[3],
+                        Item_type: columns[4],
+                        Item_inventory: columns[5]
+                    };
+                });
+            }
+            
+            function displayItems(items) {
+                const container = document.getElementById('item-list');
+                container.innerHTML = ''; // Clear the container
+            
+                items.forEach(item => {
+                    // Create a div for each item
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'item';
+                    itemDiv.innerHTML = `
+                        <div>Item ID: ${item.Item_id}</div>
+                        <div>Store ID: ${item.Store_id}</div>
+                        <div>Name: ${item.Item_name}</div>
+                        <div>Price: ${item.Item_price}</div>
+                        <div>Type: ${item.Item_type}</div>
+                        <div>Inventory: ${item.Item_inventory}</div>
+                        <div><input type="checkbox" name="selectItem" value="${item.Item_id}" /></div>
+                    `;
+                    container.appendChild(itemDiv); // Add the div to the container
+                });            
+        
+                // Add event listeners to newly added checkboxes
+                container.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            console.log('Selected Item ID:', this.value);  // Log selected item ID
+                        } else {
+                            console.log('Deselected Item ID:', this.value);  // Log deselected item ID
+                        }
+                    });
+                });
+            }
+        </script> -->
+        
+    
+</body>
+</html>
