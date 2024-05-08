@@ -3,11 +3,10 @@ This is our first edition 4.20
 design:
 	E-R Diagram
 
-frontend: (by hwx)
-	Home & login & registry
-	TODO: 
-		***choose botton for gender&birth*** (if time allowd)
-
+frontend: (by zwx & hwx)
+	zwx: home after login, logout, search items, store, user, shopping cart, orders, and personal information edition pages.
+	hwx: Home, login, registry
+	
 backend: (by lycoris & vivian)
 	Data: create the schema and toy data
 	Query: 
