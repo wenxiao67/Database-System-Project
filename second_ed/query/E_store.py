@@ -2,7 +2,7 @@ import mysql.connector
 import os
 import pandas as pd
 
-def connect_to_database(host='127.0.0.1', port=3306, user='root', password='Xhypp*426118', database='proj'):
+def connect_to_database(host='127.0.0.1', port=3306, user='root', password=' ', database='proj'):
     """
         Connect to a MySQL database and return the connection and cursor.
         :param host: The host IP address or domain name.
